@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DINPro', Arial, Helvetica, sans-serif;
+    color: #000;
+    background: #fff;
+    min-width: 320px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+header,
+section,
+footer {
+    display: block;
+}
+
+input,
+textarea,
+button {
+    outline: none;
+    border-radius: 0px;
+}
+
+input[type="text"],
+textarea,
+button {
+    -webkit-appearance: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+ul li {
+    list-style: none;
+}

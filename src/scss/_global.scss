@@ -1,0 +1,348 @@
+.sprite {
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    &__img-default {
+        position: relative;
+        z-index: 2;
+    }
+    &__img-animated {
+        position: absolute;
+        z-index: 1;
+        opacity: 0;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &:hover {
+        .sprite__img-default {
+            opacity: 0;
+        }
+        .sprite__img-animated {
+            opacity: 1;
+        }
+    }
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    background: url(../img/page-background.jpg) no-repeat center top/cover;
+
+    @media screen and (max-width: 991px) {
+        background: url(../img/page-background-medium.jpg) no-repeat center top/cover;
+    }
+
+    @media screen and (max-width: 575px) {
+        background: url(../img/page-background-small.jpg) no-repeat center top/cover;
+    }
+}
+
+.planet {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.page {
+    position: relative;
+    z-index: 2;
+    &__top {
+        padding-top: 300px;
+        &-heading {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            &-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+        }
+        &-intro {
+            &-heading {
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                color: #fff;
+                text-transform: uppercase;
+                margin-bottom: 40px;
+                p {
+                    font-size: 40px;
+                    font-weight: 400;
+                    span {
+                        font-weight: 600;
+                    }
+                }
+                h2 {
+                    font-size: 50px;
+                    font-weight: 700;
+                }
+                &-text {
+                    line-height: 48px;
+                    text-align: right;
+                    padding-right: 15px;
+                }
+                &-cost {
+                    font-size: 119px;
+                    font-weight: 700;
+                    line-height: 115px;
+                    padding-right: 15px;
+                }
+            }
+            &-call-to-action {
+                text-align: center;
+                margin-bottom: 130px;
+            }
+            &-tagline {
+                text-align: center;
+            }
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        &__top {
+            &-intro {
+                &-heading {
+                    display: block;
+                    text-align: center;
+                    &-text {
+                        text-align: center;
+                        padding-right: 0;
+                        line-height: 1;
+                    }
+                    &-cost {
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 575px) {
+        &__top {
+            padding-top: 150px;
+            &-intro {
+                &-heading {
+                    p {
+                        font-size: 24px;
+                    }
+                    h2 {
+                        font-size: 36px;
+                    }
+                    &-text {
+                        text-align: center;
+                    }
+                    &-cost {
+                        font-size: 72px;
+                        line-height: 65px;
+                    }
+                }
+                &-call-to-action {
+                    margin-bottom: 65px;
+                }
+            }
+        }
+    }
+    
+}
+
+.logo-discovery {
+    width: 198px;
+    flex: 0 0 198px;
+    @media screen and (max-width: 767px) {
+        width: 150px;
+        flex: 0 0 150px;
+    }
+    @media screen and (max-width: 575px) {
+        width: 100px;
+        flex: 0 0 100px;
+    }
+}
+
+.logo-volya {
+    width: 254px;
+    flex: 0 0 254px;
+
+    @media screen and (max-width: 767px) {
+        width: 192px;
+        flex: 0 0 192px;
+    }
+
+    @media screen and (max-width: 575px) {
+        width: 120px;
+        flex: 0 0 120px;
+    }
+}
+
+.social-media {
+    flex: 0 0 auto;
+    padding-top: 20px;
+    &__list {
+        display: flex;
+    }
+    &__item {
+        margin: 0 10px;
+    }
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+}
+
+.button {
+    display: inline-block;
+    border-radius: 5px;
+    background: url(../img/button.png) no-repeat center/cover;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    &:hover {
+        box-shadow: 0 0 30px rgba(#fff, 0.25);
+    }
+    &--big {
+        width: 220px;
+        height: 55px;
+        line-height: 55px;
+        font-size: 24px;
+        font-weight: 600;
+    }
+    &--small {
+        width: 145px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 16px;
+    }
+}
+
+.programs {
+    padding: 130px 0;
+    &__tabs {
+        margin-bottom: 130px;
+        &-item {
+            cursor: pointer;
+        }
+        .slick-current {
+            .sprite__img-default {
+                opacity: 0;
+            }
+            .sprite__img-animated {
+                opacity: 1;
+            }
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        padding: 65px 0;
+        &__tabs {
+            margin-bottom: 65px;
+        }
+    }
+
+    @media screen and (max-width: 575px) {
+        padding: 0;
+        padding-bottom: 30px;
+        &__tabs {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.program-single {
+    margin: 0 auto;
+    &__video {
+        &-link {
+            display: block;
+            width: 320px;
+            height: 320px;
+            border-radius: 100%;
+            margin: 0 auto;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            position: relative;
+            box-shadow: 1px 1px 70px rgba(#000, 0.35) inset, 0px 0px 100px rgba(#003f5f, 0.35) inset;
+            &:after {
+                content: '';
+                position: absolute;
+                width: 70px;
+                height: 80px;
+                background: url(../img/icons/play.png) no-repeat center/cover;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+    &__content {
+        color: #fff;
+        &-title {
+            font-size: 50px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+        }
+        &-social {
+            &-link {
+                margin-right: 25px;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+        &-text {
+            margin-bottom: 30px;
+            p {
+                margin-top: 30px;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 17px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1199px) {
+        &__content {
+            &-title {
+                font-size: 36px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        &__video {
+            margin-bottom: 30px;
+        }
+        &__content {
+            text-align: center;
+        }
+    }
+
+    @media screen and (max-width: 575px) {
+        &__video {
+            &-link {
+                width: 290px;
+                height: 290px;
+                &:after {
+                    width: 35px;
+                    height: 40px;
+                }
+            }
+        }
+        &__content {
+            &-title {
+                font-size: 24px;
+            }
+            &-text {
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    
+}
