@@ -219,11 +219,28 @@
 }
 
 .programs {
-    padding: 130px 0;
+    padding: 10px 0;
     &__tabs {
         margin-bottom: 130px;
         &-item {
             cursor: pointer;
+        }
+        &-control {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 50%;
+            margin-top: -15px;
+            background: none;
+            border: none;
+            &-prev {
+                background: url(../img/icons/arrow-left.svg) no-repeat center/cover;
+                left: -30px;
+            }
+            &-next {
+                background: url(../img/icons/arrow-right.svg) no-repeat center/cover;
+                right: -30px;
+            }
         }
         .slick-current {
             .sprite__img-default {
@@ -236,7 +253,7 @@
     }
 
     @media screen and (max-width: 991px) {
-        padding: 65px 0;
+        padding: 35px 0;
         &__tabs {
             margin-bottom: 65px;
         }
@@ -244,15 +261,25 @@
 
     @media screen and (max-width: 575px) {
         padding: 0;
+        padding-top: 15px;
         padding-bottom: 30px;
         &__tabs {
             margin-bottom: 0px;
+            &-control {
+                &-prev {
+                    left: 0px;
+                }
+                &-next {
+                    right: 0px;
+                }
+            }
         }
     }
 }
 
 .program-single {
     margin: 0 auto;
+    padding-top: 30px;
     &__video {
         &-link {
             display: block;
@@ -274,6 +301,9 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+            }
+            &:hover {
+                box-shadow: 1px 1px 70px rgba(#000, 0.35) inset, 0px 0px 100px rgba(#003f5f, 0.35) inset, 0 0 40px rgba(#fff, 0.5);
             }
         }
     }
@@ -325,11 +355,14 @@
     @media screen and (max-width: 575px) {
         &__video {
             &-link {
-                width: 290px;
-                height: 290px;
+                width: 230px;
+                height: 230px;
                 &:after {
                     width: 35px;
                     height: 40px;
+                }
+                &:hover {
+                    box-shadow: 1px 1px 70px rgba(#000, 0.35) inset, 0px 0px 100px rgba(#003f5f, 0.35) inset, 0 0 20px rgba(#fff, 0.5);
                 }
             }
         }

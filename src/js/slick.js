@@ -19,13 +19,14 @@ $(document).ready(function () {
         slidesToScroll: 1,
         asNavFor: '.programs__body',
         focusOnSelect: true,
-        arrows: false,
         touchThreshold: 10,
+        prevArrow: `<button type="button" class="programs__tabs-control programs__tabs-control-prev slick-prev"></button>`,
+        nextArrow: `<button type="button" class="programs__tabs-control programs__tabs-control-next slick-next"></button>`,
         responsive: [
             {
                 breakpoint: 1200,
                 settings: {
-                    slidesToShow: 5
+                    slidesToShow: 5,
                 }
             },
             {
